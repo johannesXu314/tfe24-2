@@ -13,7 +13,20 @@ auto main(int argc, char **argv) -> int
      */
     fmt::print("Hello, {}!\n", tfe24::PROJECT_NAME);
 
-    /* INSERT YOUR CODE HERE */
+    int x = 10;
+    int *p = &x;
+    fmt::print("Das ist die Addresse {}\n", fmt::ptr(&x));
+    fmt::print("Addresse von x: {}, Addresse von x: {} \n", x, fmt::ptr(&x));
+    *p = 42;
+    fmt::print("Addresse von x: {}, Addresse von x: {} \n", x, fmt::ptr(&x));
 
+    //Teil 2
+    double *z = new double(3.1415);
+    fmt::print("Addresse von z: {}, Addresse von z: {} \n", x, fmt::ptr(&z));
+    delete z;
+
+
+    //Teil 3
+    
     return 0; /* exit gracefully*/
 }
