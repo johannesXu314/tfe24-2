@@ -24,6 +24,7 @@ auto main(int argc, char **argv) -> int
     double *z = new double(3.1415);
     fmt::print("Addresse von z: {}, Addresse von z: {} \n", x, fmt::ptr(&z));
     delete z;
+    //s
 
 
     //Teil 3
