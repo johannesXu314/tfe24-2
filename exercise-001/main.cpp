@@ -13,7 +13,33 @@ auto main(int argc, char **argv) -> int
      */
     fmt::print("Hello, {}!\n", tfe24::PROJECT_NAME);
 
-    /* INSERT YOUR CODE HERE */
+    int x = 10;
+    int& r = x;
+
+    // --- Aufgabe: Übergabe per Parameter vs. Referenz
+
+    // Teil: Funktionen definieren (hier lokal vor der Nutzung)
+    auto changeValueByParameter = [](int value) {
+        value = 99;
+        fmt::print("Inside changeValueByParameter: value = {}\n", value);
+    };
+
+    auto changeValueByReference = [](int &ref) {
+        ref = 77;
+        fmt::print("Inside changeValueByReference: ref = {}\n", ref);
+    };
+
+    // Vergleichsbeispiel
+    int y = 5;
+    fmt::print("y before changeValueByParameter: {}\n", y);
+    changeValueByParameter(y);
+    fmt::print("y after changeValueByParameter: {}\n", y);
+
+    fmt::print("\n");
+
+    fmt::print("y before changeValueByReference: {}\n", y);
+    changeValueByReference(y);
+    fmt::print("y after changeValueByReference: {}\n", y);
 
     return 0; /* exit gracefully*/
 }
